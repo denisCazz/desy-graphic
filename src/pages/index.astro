@@ -1,0 +1,743 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Home">
+  <Header />
+  
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <!-- Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-primary-100"></div>
+    <div class="absolute inset-0 opacity-30 hidden sm:block">
+      <div class="absolute top-20 right-10 md:right-20 w-48 md:w-72 lg:w-96 h-48 md:h-72 lg:h-96 bg-primary-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+      <div class="absolute bottom-20 left-10 md:left-20 w-48 md:w-72 lg:w-96 h-48 md:h-72 lg:h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+      <div class="absolute top-1/2 left-1/2 w-32 md:w-48 lg:w-72 h-32 md:h-48 lg:h-72 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="text-center">
+        <div class="inline-block mb-6 animate-fade-in">
+          <span class="bg-white/80 backdrop-blur-sm text-primary-700 px-5 py-2.5 rounded-full text-sm font-medium shadow-lg border border-primary-100">
+            ✨ Grafica Personalizzata di Alta Qualità
+          </span>
+        </div>
+        <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up">
+          <span class="gradient-text">Trasforma</span> la tua<br />
+          <span class="text-gray-900">visione in realtà</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed animate-fade-in-up animation-delay-200">
+          Ciao, sono <span class="font-semibold text-primary-600">Desiree Tropini</span>. 
+          Creo identità visive uniche e memorabili che raccontano la storia del tuo brand.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
+          <a href="#contatti" class="group bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform">
+            Inizia un Progetto
+            <span class="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+          <a href="#servizi" class="bg-white/80 backdrop-blur-sm text-primary-600 border-2 border-primary-300 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:border-primary-500 transition-all shadow-lg">
+            Scopri i Servizi
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="w-6 h-10 border-2 border-primary-400 rounded-full flex justify-center pt-2">
+        <div class="w-1.5 h-3 bg-primary-400 rounded-full animate-scroll"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chi Sono Section -->
+  <section id="chi-sono" class="py-16 md:py-24 bg-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-50 to-transparent hidden md:block"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-full h-full bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl md:rounded-3xl transform rotate-2 md:rotate-3"></div>
+          <div class="relative bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl md:rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop" 
+                 alt="Desiree Tropini - Graphic Designer" 
+                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="absolute -bottom-4 right-4 md:-bottom-6 md:-right-6 lg:-bottom-8 lg:-right-8 bg-white rounded-xl md:rounded-2xl p-4 md:p-6 shadow-2xl border border-primary-100">
+            <div class="flex items-center gap-3 md:gap-4">
+              <div class="w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center">
+                <span class="text-white font-bold text-base md:text-xl">5+</span>
+              </div>
+              <div>
+                <p class="font-display font-bold text-gray-900 text-sm md:text-base">Anni di</p>
+                <p class="text-primary-600 font-semibold text-sm md:text-base">Esperienza</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:pl-8 order-1 lg:order-2 text-center lg:text-left">
+          <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Chi Sono</span>
+          <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">
+            Creo <span class="gradient-text">esperienze visive</span> che lasciano il segno
+          </h2>
+          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+            Sono Desiree Tropini, una graphic designer appassionata con oltre 5 anni di esperienza nel creare identità visive uniche per brand che vogliono distinguersi.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+            Il mio approccio combina creatività, strategia e attenzione ai dettagli per trasformare le tue idee in design memorabili che comunicano i valori del tuo brand.
+          </p>
+          <div class="grid grid-cols-2 gap-6 mb-8">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <span class="font-medium text-gray-900">100+ Progetti</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <span class="font-medium text-gray-900">50+ Clienti Felici</span>
+            </div>
+          </div>
+          <a href="#contatti" class="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors">
+            Parliamo del tuo progetto
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servizi Section -->
+  <section id="servizi" class="py-16 md:py-24 bg-gradient-to-b from-white to-primary-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">I Miei Servizi</span>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
+          Soluzioni <span class="gradient-text">su misura</span> per te
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Ogni progetto è unico. Offro servizi personalizzati per rispondere alle esigenze specifiche del tuo brand.
+        </p>
+      </div>
+      
+      <!-- Main Service -->
+      <div class="mb-16">
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-primary-100">
+          <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="p-8 lg:p-12 flex flex-col justify-center">
+              <div class="inline-flex items-center gap-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6 w-fit">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                </svg>
+                Servizio Premium
+              </div>
+              <h3 class="font-display text-3xl lg:text-4xl font-bold mb-4 text-gray-900">Brand Identity Completa</h3>
+              <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                Un pacchetto completo per creare l'identità visiva del tuo brand da zero: logo, palette colori, tipografia, pattern, icone e un manuale d'uso dettagliato.
+              </p>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-3 text-gray-700">
+                  <svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  Logo design con varianti
+                </li>
+                <li class="flex items-center gap-3 text-gray-700">
+                  <svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  Palette colori e tipografia
+                </li>
+                <li class="flex items-center gap-3 text-gray-700">
+                  <svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  Brand guidelines complete
+                </li>
+              </ul>
+              <a href="#contatti" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all w-fit">
+                Richiedi preventivo
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+            <div class="relative h-64 lg:h-auto">
+              <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop" 
+                   alt="Brand Identity Design" 
+                   class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Other Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-primary-200 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 to-transparent rounded-bl-full"></div>
+          <div class="relative">
+            <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3 text-gray-900">Social Media Graphics</h3>
+            <p class="text-gray-600 mb-4">
+              Contenuti visivi accattivanti per Instagram, Facebook, LinkedIn e altre piattaforme.
+            </p>
+            <a href="#contatti" class="text-primary-600 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              Scopri di più
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-primary-200 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 to-transparent rounded-bl-full"></div>
+          <div class="relative">
+            <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3 text-gray-900">Materiali Stampati</h3>
+            <p class="text-gray-600 mb-4">
+              Biglietti da visita, brochure, flyer, cataloghi e tutto per la stampa professionale.
+            </p>
+            <a href="#contatti" class="text-primary-600 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              Scopri di più
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-primary-200 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 to-transparent rounded-bl-full"></div>
+          <div class="relative">
+            <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3 text-gray-900">Web Design</h3>
+            <p class="text-gray-600 mb-4">
+              Design di interfacce web moderne, responsive e user-friendly per il tuo sito.
+            </p>
+            <a href="#contatti" class="text-primary-600 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              Scopri di più
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-primary-200 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 to-transparent rounded-bl-full"></div>
+          <div class="relative">
+            <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3 text-gray-900">Packaging Design</h3>
+            <p class="text-gray-600 mb-4">
+              Design di packaging accattivante che fa risaltare i tuoi prodotti sugli scaffali.
+            </p>
+            <a href="#contatti" class="text-primary-600 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              Scopri di più
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-primary-200 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 to-transparent rounded-bl-full"></div>
+          <div class="relative">
+            <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3 text-gray-900">Motion Graphics</h3>
+            <p class="text-gray-600 mb-4">
+              Animazioni e video grafici per rendere i tuoi contenuti più dinamici e coinvolgenti.
+            </p>
+            <a href="#contatti" class="text-primary-600 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              Scopri di più
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="group bg-gradient-to-br from-primary-500 to-primary-600 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-bl-full"></div>
+          <div class="relative text-white">
+            <div class="w-14 h-14 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3">Hai un'idea diversa?</h3>
+            <p class="text-white/90 mb-4">
+              Contattami per discutere del tuo progetto. Troveremo insieme la soluzione perfetta!
+            </p>
+            <a href="#contatti" class="bg-white text-primary-600 font-semibold px-5 py-2.5 rounded-full inline-flex items-center gap-2 hover:bg-gray-100 transition-colors">
+              Parliamone
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Portfolio</span>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
+          I miei <span class="gradient-text">lavori recenti</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Una selezione dei progetti di cui sono più orgogliosa
+        </p>
+      </div>
+      
+      <!-- Featured Project -->
+      <div class="mb-12">
+        <div class="group relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
+          <div class="aspect-[16/9] md:aspect-[21/9]">
+            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1400&h=600&fit=crop" 
+                 alt="Brand Identity Project" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 lg:p-12">
+            <div class="flex flex-wrap gap-2 mb-2 md:mb-4">
+              <span class="bg-primary-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Brand Identity</span>
+              <span class="bg-white/20 backdrop-blur text-white text-xs font-semibold px-3 py-1 rounded-full">Logo Design</span>
+            </div>
+            <h3 class="font-display text-xl sm:text-2xl lg:text-4xl font-bold text-white mb-1 md:mb-2">Bloom Cosmetics</h3>
+            <p class="text-white/80 text-sm md:text-lg max-w-2xl mb-3 md:mb-4 hidden sm:block">Identità visiva completa per un brand di cosmetici naturali, dalla strategia al packaging.</p>
+            <a href="#" class="inline-flex items-center gap-2 bg-white text-gray-900 px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold text-sm md:text-base hover:bg-primary-100 transition-colors">
+              Vedi il progetto
+              <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Portfolio Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+          <div class="aspect-[4/5]">
+            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=500&h=625&fit=crop" 
+                 alt="Social Media Design" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-primary-300 text-sm font-semibold">Social Media</span>
+            <h3 class="font-display text-xl font-bold text-white mt-1">Caffè Dolce Vita</h3>
+            <p class="text-white/70 text-sm mt-2">Campagna Instagram completa</p>
+          </div>
+        </div>
+        
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+          <div class="aspect-[4/5]">
+            <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=500&h=625&fit=crop" 
+                 alt="Packaging Design" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-primary-300 text-sm font-semibold">Packaging</span>
+            <h3 class="font-display text-xl font-bold text-white mt-1">Naturale Bio</h3>
+            <p class="text-white/70 text-sm mt-2">Linea prodotti biologici</p>
+          </div>
+        </div>
+        
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+          <div class="aspect-[4/5]">
+            <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?w=500&h=625&fit=crop" 
+                 alt="Web Design" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-primary-300 text-sm font-semibold">Web Design</span>
+            <h3 class="font-display text-xl font-bold text-white mt-1">Studio Architettura</h3>
+            <p class="text-white/70 text-sm mt-2">Sito web minimalista</p>
+          </div>
+        </div>
+        
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all md:col-span-2">
+          <div class="aspect-[16/9]">
+            <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=1000&h=562&fit=crop" 
+                 alt="Brand Guidelines" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-primary-300 text-sm font-semibold">Brand Identity</span>
+            <h3 class="font-display text-xl font-bold text-white mt-1">Wellness Center</h3>
+            <p class="text-white/70 text-sm mt-2">Rebranding completo</p>
+          </div>
+        </div>
+        
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+          <div class="aspect-[4/5]">
+            <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=500&h=625&fit=crop" 
+                 alt="Print Design" 
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <span class="text-primary-300 text-sm font-semibold">Materiali Stampati</span>
+            <h3 class="font-display text-xl font-bold text-white mt-1">Fashion Week</h3>
+            <p class="text-white/70 text-sm mt-2">Catalogo e inviti evento</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Processo Section -->
+  <section class="py-16 md:py-24 bg-gray-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center mb-16">
+        <span class="text-primary-400 font-semibold text-sm uppercase tracking-wider">Come Lavoro</span>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
+          Il mio <span class="text-primary-400">processo</span> creativo
+        </h2>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+          Un approccio strutturato per garantire risultati eccellenti
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="relative">
+          <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-colors h-full">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">
+              01
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3">Scoperta</h3>
+            <p class="text-gray-400">
+              Analizzo il tuo brand, i tuoi obiettivi e il tuo pubblico target per capire cosa serve davvero.
+            </p>
+          </div>
+          <div class="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary-500 to-transparent"></div>
+        </div>
+        
+        <div class="relative">
+          <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-colors h-full">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">
+              02
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3">Strategia</h3>
+            <p class="text-gray-400">
+              Definisco la direzione creativa e preparo moodboard e concept per allinearci sulla visione.
+            </p>
+          </div>
+          <div class="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary-500 to-transparent"></div>
+        </div>
+        
+        <div class="relative">
+          <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-colors h-full">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">
+              03
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3">Design</h3>
+            <p class="text-gray-400">
+              Creo le proposte grafiche, le affino con i tuoi feedback fino al risultato perfetto.
+            </p>
+          </div>
+          <div class="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary-500 to-transparent"></div>
+        </div>
+        
+        <div>
+          <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-colors h-full">
+            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">
+              04
+            </div>
+            <h3 class="font-display text-xl font-bold mb-3">Consegna</h3>
+            <p class="text-gray-400">
+              Preparo tutti i file nei formati necessari e ti supporto nell'implementazione.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 md:py-24 bg-gradient-to-b from-primary-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Testimonianze</span>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
+          Cosa dicono i <span class="gradient-text">clienti</span>
+        </h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 relative">
+          <div class="absolute -top-4 left-8 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+          <div class="flex items-center mb-4 mt-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-600 mb-6 italic">
+            "Desiree ha trasformato completamente l'immagine del nostro brand. Professionale, creativa e sempre disponibile. Consigliatissima!"
+          </p>
+          <div class="flex items-center gap-4">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Cliente" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="font-semibold text-gray-900">Maria Rossi</p>
+              <p class="text-sm text-gray-500">CEO, Bloom Cosmetics</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 relative">
+          <div class="absolute -top-4 left-8 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+          <div class="flex items-center mb-4 mt-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-600 mb-6 italic">
+            "Il nostro nuovo logo e sito hanno aumentato le conversioni del 40%. Un investimento che si è ripagato subito!"
+          </p>
+          <div class="flex items-center gap-4">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Cliente" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="font-semibold text-gray-900">Luca Bianchi</p>
+              <p class="text-sm text-gray-500">Founder, TechStart</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 relative">
+          <div class="absolute -top-4 left-8 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+          <div class="flex items-center mb-4 mt-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-600 mb-6 italic">
+            "Finalmente qualcuno che capisce davvero cosa significa creare un brand coerente. Risultati straordinari!"
+          </p>
+          <div class="flex items-center gap-4">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Cliente" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="font-semibold text-gray-900">Giulia Verdi</p>
+              <p class="text-sm text-gray-500">Marketing Director, Wellness Co.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contatti Section -->
+  <section id="contatti" class="py-16 md:py-24 bg-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-primary-50 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Contattami</span>
+          <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">
+            Iniziamo il tuo <span class="gradient-text">prossimo progetto</span>
+          </h2>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Hai un'idea in mente? Raccontamela! Sarò felice di ascoltarti e capire come posso aiutarti a trasformarla in realtà.
+          </p>
+          
+          <div class="space-y-6 mb-8">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Email</p>
+                <a href="mailto:info@desireetropini.it" class="text-lg font-semibold text-gray-900 hover:text-primary-600 transition-colors">info@desireetropini.it</a>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Sede</p>
+                <p class="text-lg font-semibold text-gray-900">Italia - Lavoro da remoto</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Tempi di risposta</p>
+                <p class="text-lg font-semibold text-gray-900">Entro 24 ore</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex gap-4">
+            <a href="#" class="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-br from-gray-50 to-primary-50 rounded-3xl p-8 lg:p-10 shadow-2xl border border-primary-100">
+          <h3 class="font-display text-2xl font-bold mb-6 text-gray-900">Invia un messaggio</h3>
+          <form class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label for="nome" class="block text-sm font-semibold text-gray-700 mb-2">Nome *</label>
+                <input type="text" id="nome" name="nome" required 
+                  class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all bg-white"
+                  placeholder="Il tuo nome">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                <input type="email" id="email" name="email" required 
+                  class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all bg-white"
+                  placeholder="la@tua.email">
+              </div>
+            </div>
+            <div>
+              <label for="servizio" class="block text-sm font-semibold text-gray-700 mb-2">Servizio di interesse</label>
+              <select id="servizio" name="servizio" 
+                class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all bg-white">
+                <option value="">Seleziona un servizio</option>
+                <option value="brand-identity">Brand Identity</option>
+                <option value="social-media">Grafica Social Media</option>
+                <option value="stampati">Materiali Stampati</option>
+                <option value="web-design">Web Design</option>
+                <option value="packaging">Packaging Design</option>
+                <option value="altro">Altro</option>
+              </select>
+            </div>
+            <div>
+              <label for="messaggio" class="block text-sm font-semibold text-gray-700 mb-2">Messaggio *</label>
+              <textarea id="messaggio" name="messaggio" rows="4" required 
+                class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all bg-white resize-none"
+                placeholder="Raccontami del tuo progetto..."></textarea>
+            </div>
+            <button type="submit" 
+              class="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all transform flex items-center justify-center gap-2">
+              Invia Messaggio
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  @keyframes blob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+  }
+  
+  @keyframes scroll {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(6px); opacity: 0.5; }
+  }
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-blob { animation: blob 7s infinite; }
+  .animate-scroll { animation: scroll 1.5s infinite; }
+  .animate-fade-in { animation: fade-in 0.6s ease-out; }
+  .animate-fade-in-up { animation: fade-in-up 0.6s ease-out; }
+  
+  .animation-delay-200 { animation-delay: 0.2s; animation-fill-mode: backwards; }
+  .animation-delay-400 { animation-delay: 0.4s; animation-fill-mode: backwards; }
+  .animation-delay-2000 { animation-delay: 2s; }
+  .animation-delay-4000 { animation-delay: 4s; }
+</style>
