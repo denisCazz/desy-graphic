@@ -10,7 +10,7 @@ const { title, description = "Servizi di grafica personalizzata di alta qualità
 ---
 
 <!doctype html>
-<html lang="it">
+<html lang="it" class="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,9 +22,15 @@ const { title, description = "Servizi di grafica personalizzata di alta qualità
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600;1,700&family=Lora:ital,wght@1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script is:inline>
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.replace('light', 'dark');
+      }
+    </script>
   </head>
-  <body class="text-gray-800 leading-relaxed">
+  <body class="text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-950 leading-relaxed transition-colors duration-300">
     <slot />
   </body>
 </html>

@@ -10,26 +10,45 @@ import Footer from '../components/Footer.astro';
   <!-- Hero Section -->
   <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
     <!-- Background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-primary-100"></div>
-    <div class="absolute inset-0 opacity-30 hidden sm:block">
-      <div class="absolute top-20 right-10 md:right-20 w-48 md:w-72 lg:w-96 h-48 md:h-72 lg:h-96 bg-primary-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-      <div class="absolute bottom-20 left-10 md:left-20 w-48 md:w-72 lg:w-96 h-48 md:h-72 lg:h-96 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-      <div class="absolute top-1/2 left-1/2 w-32 md:w-48 lg:w-72 h-32 md:h-48 lg:h-72 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+    <div class="absolute inset-0 bg-white dark:bg-gray-950 transition-colors duration-300"></div>
+
+    <!-- Floating graphic design elements -->
+    <div class="absolute inset-0 pointer-events-none hidden lg:block">
+      <!-- Pen tool icon -->
+      <svg class="absolute top-32 left-16 w-12 h-12 text-primary-300 dark:text-primary-600 opacity-60 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+      </svg>
+      <!-- Color palette -->
+      <div class="absolute top-44 right-24 flex gap-2 animate-float-delay">
+        <div class="w-6 h-6 rounded-full bg-primary-400 animate-swatch shadow-lg"></div>
+        <div class="w-6 h-6 rounded-full bg-primary-600 animate-swatch-delay shadow-lg"></div>
+        <div class="w-6 h-6 rounded-full bg-primary-800 animate-swatch-delay-2 shadow-lg"></div>
+      </div>
+      <!-- Bezier curve -->
+      <svg class="absolute bottom-40 right-32 w-24 h-24 text-primary-200 dark:text-primary-700 opacity-50 animate-float" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M10 90 C 30 10, 70 10, 90 90" stroke-linecap="round"/>
+        <circle cx="10" cy="90" r="4" fill="currentColor"/>
+        <circle cx="90" cy="90" r="4" fill="currentColor"/>
+      </svg>
+      <!-- Grid/rulers -->
+      <svg class="absolute bottom-32 left-20 w-16 h-16 text-primary-300 dark:text-primary-700 opacity-40 animate-float-delay" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+      </svg>
     </div>
     
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div class="text-center">
         <div class="inline-block mb-6 animate-fade-in">
-          <span class="bg-white/80 backdrop-blur-sm text-primary-700 px-5 py-2.5 rounded-full text-sm font-medium shadow-lg border border-primary-100">
+          <span class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-primary-700 dark:text-primary-400 px-5 py-2.5 rounded-full text-sm font-medium shadow-lg border border-primary-100 dark:border-primary-800">
             ✨ Grafica Personalizzata di Alta Qualità
           </span>
         </div>
         <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in-up">
           <span class="gradient-text">Trasforma</span> la tua<br />
-          <span class="text-gray-900">visione in realtà</span>
+          <span class="text-gray-900 dark:text-white">visione in realtà</span>
         </h1>
-        <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed animate-fade-in-up animation-delay-200">
-          Ciao, sono <span class="font-semibold text-primary-600">Desiree Tropini</span>. 
+        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed animate-fade-in-up animation-delay-200">
+          Ciao, sono <span class="font-semibold text-primary-600 dark:text-primary-400">Desiree Tropini</span>. 
           Creo identità visive uniche e memorabili che raccontano la storia del tuo brand.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
@@ -37,7 +56,7 @@ import Footer from '../components/Footer.astro';
             Inizia un Progetto
             <span class="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
           </a>
-          <a href="#servizi" class="bg-white/80 backdrop-blur-sm text-primary-600 border-2 border-primary-300 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:border-primary-500 transition-all shadow-lg">
+          <a href="#servizi" class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-primary-600 dark:text-primary-400 border-2 border-primary-300 dark:border-primary-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white dark:hover:bg-gray-800 hover:border-primary-500 transition-all shadow-lg">
             Scopri i Servizi
           </a>
         </div>
@@ -46,31 +65,31 @@ import Footer from '../components/Footer.astro';
     
     <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <div class="w-6 h-10 border-2 border-primary-400 rounded-full flex justify-center pt-2">
-        <div class="w-1.5 h-3 bg-primary-400 rounded-full animate-scroll"></div>
+      <div class="w-6 h-10 border-2 border-primary-400 dark:border-primary-500 rounded-full flex justify-center pt-2">
+        <div class="w-1.5 h-3 bg-primary-400 dark:bg-primary-500 rounded-full animate-scroll"></div>
       </div>
     </div>
   </section>
 
   <!-- Chi Sono Section -->
-  <section id="chi-sono" class="py-16 md:py-24 bg-white relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-50 to-transparent hidden md:block"></div>
+  <section id="chi-sono" class="py-16 md:py-24 bg-white dark:bg-gray-950 relative overflow-hidden transition-colors duration-300">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-50 dark:from-primary-950/30 to-transparent hidden md:block"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center reveal">
         <div class="relative order-2 lg:order-1">
           <div class="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-full h-full bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl md:rounded-3xl transform rotate-2 md:rotate-3"></div>
           <div class="relative bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl md:rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop" 
-                 alt="Desiree Tropini - Graphic Designer" 
+            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&h=750&fit=crop" 
+                 alt="Studio di Graphic Design Professionale" 
                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
           </div>
-          <div class="absolute -bottom-4 right-4 md:-bottom-6 md:-right-6 lg:-bottom-8 lg:-right-8 bg-white rounded-xl md:rounded-2xl p-4 md:p-6 shadow-2xl border border-primary-100">
+          <div class="absolute -bottom-4 right-4 md:-bottom-6 md:-right-6 lg:-bottom-8 lg:-right-8 bg-white dark:bg-gray-800 rounded-xl md:rounded-2xl p-4 md:p-6 shadow-2xl border border-primary-100 dark:border-primary-800">
             <div class="flex items-center gap-3 md:gap-4">
               <div class="w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center">
                 <span class="text-white font-bold text-base md:text-xl">5+</span>
               </div>
               <div>
-                <p class="font-display font-bold text-gray-900 text-sm md:text-base">Anni di</p>
+                <p class="font-display font-bold text-gray-900 dark:text-white text-sm md:text-base">Anni di</p>
                 <p class="text-primary-600 font-semibold text-sm md:text-base">Esperienza</p>
               </div>
             </div>
@@ -78,14 +97,14 @@ import Footer from '../components/Footer.astro';
         </div>
         
         <div class="lg:pl-8 order-1 lg:order-2 text-center lg:text-left">
-          <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Chi Sono</span>
+          <span class="text-primary-600 dark:text-primary-400 font-semibold text-sm uppercase tracking-wider">Chi Sono</span>
           <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">
             Creo <span class="gradient-text">esperienze visive</span> che lasciano il segno
           </h2>
-          <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
             Sono Desiree Tropini, una graphic designer appassionata con oltre 5 anni di esperienza nel creare identità visive uniche per brand che vogliono distinguersi.
           </p>
-          <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
             Il mio approccio combina creatività, strategia e attenzione ai dettagli per trasformare le tue idee in design memorabili che comunicano i valori del tuo brand.
           </p>
           <div class="grid grid-cols-2 gap-6 mb-8">
@@ -95,18 +114,18 @@ import Footer from '../components/Footer.astro';
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
               </div>
-              <span class="font-medium text-gray-900">100+ Progetti</span>
+              <span class="font-medium text-gray-900 dark:text-white">100+ Progetti</span>
             </div>
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+              <div class="w-10 h-10 bg-primary-100 dark:bg-primary-900/50 rounded-full flex items-center justify-center">
                 <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                 </svg>
               </div>
-              <span class="font-medium text-gray-900">50+ Clienti Felici</span>
+              <span class="font-medium text-gray-900 dark:text-white">50+ Clienti Felici</span>
             </div>
           </div>
-          <a href="#contatti" class="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors">
+          <a href="#contatti" class="inline-flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors">
             Parliamo del tuo progetto
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -118,47 +137,47 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- Servizi Section -->
-  <section id="servizi" class="py-16 md:py-24 bg-gradient-to-b from-white to-primary-50">
+  <section id="servizi" class="py-16 md:py-24 bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">I Miei Servizi</span>
+      <div class="text-center mb-16 reveal">
+        <span class="text-primary-600 dark:text-primary-400 font-semibold text-sm uppercase tracking-wider">I Miei Servizi</span>
         <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
           Soluzioni <span class="gradient-text">su misura</span> per te
         </h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Ogni progetto è unico. Offro servizi personalizzati per rispondere alle esigenze specifiche del tuo brand.
         </p>
       </div>
       
       <!-- Main Service -->
       <div class="mb-16">
-        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-primary-100">
+        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden border border-primary-100 dark:border-primary-800 reveal gfx-border">
           <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="p-8 lg:p-12 flex flex-col justify-center">
-              <div class="inline-flex items-center gap-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-medium mb-6 w-fit">
+              <div class="inline-flex items-center gap-2 bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 px-4 py-2 rounded-full text-sm font-medium mb-6 w-fit">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
                 </svg>
                 Servizio Premium
               </div>
-              <h3 class="font-display text-3xl lg:text-4xl font-bold mb-4 text-gray-900">Brand Identity Completa</h3>
-              <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+              <h3 class="font-display text-3xl lg:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Brand Identity Completa</h3>
+              <p class="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                 Un pacchetto completo per creare l'identità visiva del tuo brand da zero: logo, palette colori, tipografia, pattern, icone e un manuale d'uso dettagliato.
               </p>
               <ul class="space-y-3 mb-8">
-                <li class="flex items-center gap-3 text-gray-700">
+                <li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
                   <svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                   </svg>
                   Logo design con varianti
                 </li>
-                <li class="flex items-center gap-3 text-gray-700">
+                <li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
                   <svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                   </svg>
                   Palette colori e tipografia
                 </li>
-                <li class="flex items-center gap-3 text-gray-700">
+                <li class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
                   <svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                   </svg>
@@ -183,20 +202,20 @@ import Footer from '../components/Footer.astro';
       </div>
       
       <!-- Other Services Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-primary-200 relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 to-transparent rounded-bl-full"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+        <div class="group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-700 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 dark:from-primary-900/30 to-transparent rounded-bl-full"></div>
           <div class="relative">
             <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
               </svg>
             </div>
-            <h3 class="font-display text-xl font-bold mb-3 text-gray-900">Social Media Graphics</h3>
-            <p class="text-gray-600 mb-4">
+            <h3 class="font-display text-xl font-bold mb-3 text-gray-900 dark:text-white">Social Media Graphics</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
               Contenuti visivi accattivanti per Instagram, Facebook, LinkedIn e altre piattaforme.
             </p>
-            <a href="#contatti" class="text-primary-600 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            <a href="#contatti" class="text-primary-600 dark:text-primary-400 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
               Scopri di più
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -205,19 +224,19 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         
-        <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-primary-200 relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 to-transparent rounded-bl-full"></div>
+        <div class="group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-700 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 dark:from-primary-900/30 to-transparent rounded-bl-full"></div>
           <div class="relative">
             <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
               </svg>
             </div>
-            <h3 class="font-display text-xl font-bold mb-3 text-gray-900">Materiali Stampati</h3>
-            <p class="text-gray-600 mb-4">
+            <h3 class="font-display text-xl font-bold mb-3 text-gray-900 dark:text-white">Materiali Stampati</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
               Biglietti da visita, brochure, flyer, cataloghi e tutto per la stampa professionale.
             </p>
-            <a href="#contatti" class="text-primary-600 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            <a href="#contatti" class="text-primary-600 dark:text-primary-400 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
               Scopri di più
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -226,19 +245,19 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         
-        <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-primary-200 relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 to-transparent rounded-bl-full"></div>
+        <div class="group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-700 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 dark:from-primary-900/30 to-transparent rounded-bl-full"></div>
           <div class="relative">
             <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
               </svg>
             </div>
-            <h3 class="font-display text-xl font-bold mb-3 text-gray-900">Web Design</h3>
-            <p class="text-gray-600 mb-4">
+            <h3 class="font-display text-xl font-bold mb-3 text-gray-900 dark:text-white">Web Design</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
               Design di interfacce web moderne, responsive e user-friendly per il tuo sito.
             </p>
-            <a href="#contatti" class="text-primary-600 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            <a href="#contatti" class="text-primary-600 dark:text-primary-400 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
               Scopri di più
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -247,19 +266,19 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         
-        <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-primary-200 relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 to-transparent rounded-bl-full"></div>
+        <div class="group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-700 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 dark:from-primary-900/30 to-transparent rounded-bl-full"></div>
           <div class="relative">
             <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
               </svg>
             </div>
-            <h3 class="font-display text-xl font-bold mb-3 text-gray-900">Packaging Design</h3>
-            <p class="text-gray-600 mb-4">
+            <h3 class="font-display text-xl font-bold mb-3 text-gray-900 dark:text-white">Packaging Design</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
               Design di packaging accattivante che fa risaltare i tuoi prodotti sugli scaffali.
             </p>
-            <a href="#contatti" class="text-primary-600 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            <a href="#contatti" class="text-primary-600 dark:text-primary-400 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
               Scopri di più
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -268,19 +287,19 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         
-        <div class="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 hover:border-primary-200 relative overflow-hidden">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 to-transparent rounded-bl-full"></div>
+        <div class="group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 dark:border-gray-700 hover:border-primary-200 dark:hover:border-primary-700 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary-100 dark:from-primary-900/30 to-transparent rounded-bl-full"></div>
           <div class="relative">
             <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
               </svg>
             </div>
-            <h3 class="font-display text-xl font-bold mb-3 text-gray-900">Motion Graphics</h3>
-            <p class="text-gray-600 mb-4">
+            <h3 class="font-display text-xl font-bold mb-3 text-gray-900 dark:text-white">Motion Graphics</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
               Animazioni e video grafici per rendere i tuoi contenuti più dinamici e coinvolgenti.
             </p>
-            <a href="#contatti" class="text-primary-600 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            <a href="#contatti" class="text-primary-600 dark:text-primary-400 font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
               Scopri di più
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -314,14 +333,14 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- Portfolio Section -->
-  <section id="portfolio" class="py-16 md:py-24 bg-white">
+  <section id="portfolio" class="py-16 md:py-24 bg-white dark:bg-gray-950 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Portfolio</span>
+      <div class="text-center mb-16 reveal">
+        <span class="text-primary-600 dark:text-primary-400 font-semibold text-sm uppercase tracking-wider">Portfolio</span>
         <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
           I miei <span class="gradient-text">lavori recenti</span>
         </h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Una selezione dei progetti di cui sono più orgogliosa
         </p>
       </div>
@@ -353,8 +372,8 @@ import Footer from '../components/Footer.astro';
       </div>
       
       <!-- Portfolio Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all gfx-border">
           <div class="aspect-[4/5]">
             <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=500&h=625&fit=crop" 
                  alt="Social Media Design" 
@@ -368,7 +387,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         
-        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all gfx-border">
           <div class="aspect-[4/5]">
             <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=500&h=625&fit=crop" 
                  alt="Packaging Design" 
@@ -382,7 +401,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         
-        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all gfx-border">
           <div class="aspect-[4/5]">
             <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?w=500&h=625&fit=crop" 
                  alt="Web Design" 
@@ -396,7 +415,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         
-        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all md:col-span-2">
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all md:col-span-2 gfx-border">
           <div class="aspect-[16/9]">
             <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=1000&h=562&fit=crop" 
                  alt="Brand Guidelines" 
@@ -410,7 +429,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         
-        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
+        <div class="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all gfx-border">
           <div class="aspect-[4/5]">
             <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=500&h=625&fit=crop" 
                  alt="Print Design" 
@@ -428,10 +447,10 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- Processo Section -->
-  <section class="py-16 md:py-24 bg-gray-900 text-white relative overflow-hidden">
+  <section class="py-16 md:py-24 bg-gray-900 dark:bg-gray-950 text-white relative overflow-hidden transition-colors duration-300">
     <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="text-center mb-16">
+      <div class="text-center mb-16 reveal">
         <span class="text-primary-400 font-semibold text-sm uppercase tracking-wider">Come Lavoro</span>
         <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
           Il mio <span class="text-primary-400">processo</span> creativo
@@ -441,7 +460,7 @@ import Footer from '../components/Footer.astro';
         </p>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
         <div class="relative">
           <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-colors h-full">
             <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">
@@ -497,17 +516,17 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- Testimonials Section -->
-  <section class="py-16 md:py-24 bg-gradient-to-b from-primary-50 to-white">
+  <section class="py-16 md:py-24 bg-gradient-to-b from-primary-50 to-white dark:from-gray-900 dark:to-gray-950 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Testimonianze</span>
+      <div class="text-center mb-16 reveal">
+        <span class="text-primary-600 dark:text-primary-400 font-semibold text-sm uppercase tracking-wider">Testimonianze</span>
         <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
           Cosa dicono i <span class="gradient-text">clienti</span>
         </h2>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 relative">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 relative">
           <div class="absolute -top-4 left-8 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center">
             <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
@@ -520,19 +539,19 @@ import Footer from '../components/Footer.astro';
               </svg>
             ))}
           </div>
-          <p class="text-gray-600 mb-6 italic">
+          <p class="text-gray-600 dark:text-gray-400 mb-6 italic">
             "Desiree ha trasformato completamente l'immagine del nostro brand. Professionale, creativa e sempre disponibile. Consigliatissima!"
           </p>
           <div class="flex items-center gap-4">
             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Cliente" class="w-12 h-12 rounded-full object-cover">
             <div>
-              <p class="font-semibold text-gray-900">Maria Rossi</p>
-              <p class="text-sm text-gray-500">CEO, Bloom Cosmetics</p>
+              <p class="font-semibold text-gray-900 dark:text-white">Maria Rossi</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">CEO, Bloom Cosmetics</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 relative">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 relative">
           <div class="absolute -top-4 left-8 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center">
             <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
@@ -545,19 +564,19 @@ import Footer from '../components/Footer.astro';
               </svg>
             ))}
           </div>
-          <p class="text-gray-600 mb-6 italic">
+          <p class="text-gray-600 dark:text-gray-400 mb-6 italic">
             "Il nostro nuovo logo e sito hanno aumentato le conversioni del 40%. Un investimento che si è ripagato subito!"
           </p>
           <div class="flex items-center gap-4">
             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Cliente" class="w-12 h-12 rounded-full object-cover">
             <div>
-              <p class="font-semibold text-gray-900">Luca Bianchi</p>
-              <p class="text-sm text-gray-500">Founder, TechStart</p>
+              <p class="font-semibold text-gray-900 dark:text-white">Luca Bianchi</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Founder, TechStart</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 relative">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 relative">
           <div class="absolute -top-4 left-8 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center">
             <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
@@ -570,14 +589,14 @@ import Footer from '../components/Footer.astro';
               </svg>
             ))}
           </div>
-          <p class="text-gray-600 mb-6 italic">
+          <p class="text-gray-600 dark:text-gray-400 mb-6 italic">
             "Finalmente qualcuno che capisce davvero cosa significa creare un brand coerente. Risultati straordinari!"
           </p>
           <div class="flex items-center gap-4">
             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Cliente" class="w-12 h-12 rounded-full object-cover">
             <div>
-              <p class="font-semibold text-gray-900">Giulia Verdi</p>
-              <p class="text-sm text-gray-500">Marketing Director, Wellness Co.</p>
+              <p class="font-semibold text-gray-900 dark:text-white">Giulia Verdi</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Marketing Director, Wellness Co.</p>
             </div>
           </div>
         </div>
@@ -586,98 +605,92 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- Contatti Section -->
-  <section id="contatti" class="py-16 md:py-24 bg-white relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-primary-50 to-transparent"></div>
+  <section id="contatti" class="py-16 md:py-24 bg-white dark:bg-gray-950 relative overflow-hidden transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center reveal">
         <div>
-          <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">Contattami</span>
+          <span class="text-primary-600 dark:text-primary-400 font-semibold text-sm uppercase tracking-wider">Contattami</span>
           <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6">
             Iniziamo il tuo <span class="gradient-text">prossimo progetto</span>
           </h2>
-          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
             Hai un'idea in mente? Raccontamela! Sarò felice di ascoltarti e capire come posso aiutarti a trasformarla in realtà.
           </p>
           
           <div class="space-y-6 mb-8">
             <div class="flex items-center gap-4">
-              <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center">
+              <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900/50 rounded-2xl flex items-center justify-center">
                 <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
               </div>
               <div>
-                <p class="text-sm text-gray-500">Email</p>
-                <a href="mailto:info@desireetropini.it" class="text-lg font-semibold text-gray-900 hover:text-primary-600 transition-colors">info@desireetropini.it</a>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Email</p>
+                <a href="mailto:info@desireetropini.it" class="text-lg font-semibold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">info@desireetropini.it</a>
               </div>
             </div>
             
             <div class="flex items-center gap-4">
-              <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center">
+              <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900/50 rounded-2xl flex items-center justify-center">
                 <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
               </div>
               <div>
-                <p class="text-sm text-gray-500">Sede</p>
-                <p class="text-lg font-semibold text-gray-900">Italia - Lavoro da remoto</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Sede</p>
+                <p class="text-lg font-semibold text-gray-900 dark:text-white">Italia - Lavoro da remoto</p>
               </div>
             </div>
             
             <div class="flex items-center gap-4">
-              <div class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center">
+              <div class="w-14 h-14 bg-primary-100 dark:bg-primary-900/50 rounded-2xl flex items-center justify-center">
                 <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
               </div>
               <div>
-                <p class="text-sm text-gray-500">Tempi di risposta</p>
-                <p class="text-lg font-semibold text-gray-900">Entro 24 ore</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Tempi di risposta</p>
+                <p class="text-lg font-semibold text-gray-900 dark:text-white">Entro 24 ore</p>
               </div>
             </div>
           </div>
           
           <div class="flex gap-4">
-            <a href="#" class="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+            <a href="#" class="w-12 h-12 bg-gray-900 dark:bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-primary-600 dark:hover:bg-primary-600 transition-colors">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
-            <a href="#" class="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
+            <a href="#" class="w-12 h-12 bg-gray-900 dark:bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-primary-600 dark:hover:bg-primary-600 transition-colors">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-            </a>
-            <a href="#" class="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
               </svg>
             </a>
           </div>
         </div>
         
-        <div class="bg-gradient-to-br from-gray-50 to-primary-50 rounded-3xl p-8 lg:p-10 shadow-2xl border border-primary-100">
-          <h3 class="font-display text-2xl font-bold mb-6 text-gray-900">Invia un messaggio</h3>
+        <div class="bg-gradient-to-br from-gray-50 to-primary-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 lg:p-10 shadow-2xl border border-primary-100 dark:border-primary-800">
+          <h3 class="font-display text-2xl font-bold mb-6 text-gray-900 dark:text-white">Invia un messaggio</h3>
           <form class="space-y-5">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label for="nome" class="block text-sm font-semibold text-gray-700 mb-2">Nome *</label>
+                <label for="nome" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Nome *</label>
                 <input type="text" id="nome" name="nome" required 
-                  class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all bg-white"
+                  class="w-full px-4 py-3.5 rounded-xl border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 dark:focus:ring-primary-900/50 outline-none transition-all bg-white dark:bg-gray-800 dark:text-white"
                   placeholder="Il tuo nome">
               </div>
               <div>
-                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                <label for="email" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Email *</label>
                 <input type="email" id="email" name="email" required 
-                  class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all bg-white"
+                  class="w-full px-4 py-3.5 rounded-xl border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 dark:focus:ring-primary-900/50 outline-none transition-all bg-white dark:bg-gray-800 dark:text-white"
                   placeholder="la@tua.email">
               </div>
             </div>
             <div>
-              <label for="servizio" class="block text-sm font-semibold text-gray-700 mb-2">Servizio di interesse</label>
+              <label for="servizio" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Servizio di interesse</label>
               <select id="servizio" name="servizio" 
-                class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all bg-white">
+                class="w-full px-4 py-3.5 rounded-xl border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 dark:focus:ring-primary-900/50 outline-none transition-all bg-white dark:bg-gray-800 dark:text-white">
                 <option value="">Seleziona un servizio</option>
                 <option value="brand-identity">Brand Identity</option>
                 <option value="social-media">Grafica Social Media</option>
@@ -688,9 +701,9 @@ import Footer from '../components/Footer.astro';
               </select>
             </div>
             <div>
-              <label for="messaggio" class="block text-sm font-semibold text-gray-700 mb-2">Messaggio *</label>
+              <label for="messaggio" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Messaggio *</label>
               <textarea id="messaggio" name="messaggio" rows="4" required 
-                class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 outline-none transition-all bg-white resize-none"
+                class="w-full px-4 py-3.5 rounded-xl border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:ring-4 focus:ring-primary-100 dark:focus:ring-primary-900/50 outline-none transition-all bg-white dark:bg-gray-800 dark:text-white resize-none"
                 placeholder="Raccontami del tuo progetto..."></textarea>
             </div>
             <button type="submit" 
@@ -741,3 +754,60 @@ import Footer from '../components/Footer.astro';
   .animation-delay-2000 { animation-delay: 2s; }
   .animation-delay-4000 { animation-delay: 4s; }
 </style>
+
+<script>
+  // Scroll Reveal with IntersectionObserver
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // Custom Cursor (desktop only)
+  if (window.matchMedia('(pointer: fine)').matches) {
+    const dot = document.createElement('div');
+    const ring = document.createElement('div');
+    dot.classList.add('cursor-dot');
+    ring.classList.add('cursor-ring');
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.left = mouseX + 'px';
+      dot.style.top = mouseY + 'px';
+    });
+
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+      ring.style.left = ringX + 'px';
+      ring.style.top = ringY + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    // Scale effect on hover over interactive elements
+    document.querySelectorAll('a, button, input, textarea, select, [role="button"]').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        dot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        ring.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        ring.style.borderColor = 'var(--color-primary-400)';
+      });
+      el.addEventListener('mouseleave', () => {
+        dot.style.transform = 'translate(-50%, -50%) scale(1)';
+        ring.style.transform = 'translate(-50%, -50%) scale(1)';
+        ring.style.borderColor = 'var(--color-primary-500)';
+      });
+    });
+  }
+</script>

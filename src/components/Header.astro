@@ -2,39 +2,55 @@
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-950/95 backdrop-blur-md shadow-sm dark:shadow-gray-900/50 transition-colors duration-300">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <a href="/" class="flex items-center space-x-2 group">
-        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform">
-          <span class="text-white font-display font-bold text-xl">DT</span>
-        </div>
-        <span class="font-display text-xl font-semibold text-gray-900">Desiree Tropini</span>
+        <img src="/logo.svg" alt="Desiree Tropini Logo" class="h-28 w-auto transform group-hover:scale-105 transition-transform dark:brightness-0 dark:invert" />
       </a>
       
       <div class="hidden md:flex items-center space-x-8">
-        <a href="#home" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Home</a>
-        <a href="#servizi" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Servizi</a>
-        <a href="#portfolio" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Portfolio</a>
-        <a href="#contatti" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Contatti</a>
+        <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium">Home</a>
+        <a href="#servizi" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium">Servizi</a>
+        <a href="#portfolio" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium">Portfolio</a>
+        <a href="#contatti" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium">Contatti</a>
         <a href="#contatti" class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all">
           Inizia un Progetto
         </a>
+        <!-- Dark mode toggle -->
+        <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle dark mode">
+          <svg id="icon-sun" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <svg id="icon-moon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
       </div>
       
-      <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-primary-600">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="theme-toggle-mobile" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300" aria-label="Toggle dark mode">
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+        <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 hover:text-primary-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
     </div>
     
     <div id="mobile-menu" class="hidden md:hidden pb-4">
       <div class="flex flex-col space-y-3">
-        <a href="#home" class="text-gray-700 hover:text-primary-600 transition-colors font-medium py-2">Home</a>
-        <a href="#servizi" class="text-gray-700 hover:text-primary-600 transition-colors font-medium py-2">Servizi</a>
-        <a href="#portfolio" class="text-gray-700 hover:text-primary-600 transition-colors font-medium py-2">Portfolio</a>
-        <a href="#contatti" class="text-gray-700 hover:text-primary-600 transition-colors font-medium py-2">Contatti</a>
+        <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors font-medium py-2">Home</a>
+        <a href="#servizi" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors font-medium py-2">Servizi</a>
+        <a href="#portfolio" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors font-medium py-2">Portfolio</a>
+        <a href="#contatti" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors font-medium py-2">Contatti</a>
         <a href="#contatti" class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2.5 rounded-full font-medium text-center">
           Inizia un Progetto
         </a>
@@ -52,4 +68,19 @@ const currentPath = Astro.url.pathname;
       mobileMenu.classList.toggle('hidden');
     });
   }
+
+  // Dark mode toggle
+  function toggleTheme() {
+    const html = document.documentElement;
+    if (html.classList.contains('dark')) {
+      html.classList.replace('dark', 'light');
+      localStorage.setItem('theme', 'light');
+    } else {
+      html.classList.replace('light', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+  document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
 </script>
