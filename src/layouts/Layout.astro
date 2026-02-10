@@ -4,9 +4,30 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonicalUrl?: string;
+  keywords?: string;
 }
 
-const { title, description = "Servizi di grafica personalizzata di alta qualità per il tuo brand" } = Astro.props;
+const siteUrl = 'https://www.tropinistudio.it';
+const {
+  title,
+  description = 'Desiree Tropini – Graphic Designer freelance in Italia. Brand identity, grafica social media, materiali stampati, web design e packaging. Richiedi un preventivo gratuito.',
+  ogTitle,
+  ogDescription,
+  ogImage = `${siteUrl}/og-image.jpg`,
+  ogType = 'website',
+  canonicalUrl,
+  keywords = 'graphic designer, grafica personalizzata, brand identity, logo design, social media design, web design, packaging design, graphic designer Italia, graphic designer freelance, Desiree Tropini',
+} = Astro.props;
+
+const fullTitle = `${title} | Desiree Tropini – Graphic Designer`;
+const resolvedOgTitle = ogTitle || fullTitle;
+const resolvedOgDesc = ogDescription || description;
+const resolvedCanonical = canonicalUrl || Astro.url.href;
 ---
 
 <!doctype html>
@@ -14,11 +35,63 @@ const { title, description = "Servizi di grafica personalizzata di alta qualità
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <title>{title} | Desiree Tropini - Grafica Personalizzata</title>
-    
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Desiree Tropini" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={resolvedCanonical} />
+
+    <!-- GEO / Local SEO -->
+    <meta name="geo.region" content="IT" />
+    <meta name="geo.placename" content="Italia" />
+    <meta name="ICBM" content="41.8719, 12.5674" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={resolvedOgTitle} />
+    <meta property="og:description" content={resolvedOgDesc} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={resolvedCanonical} />
+    <meta property="og:site_name" content="Desiree Tropini – Graphic Designer" />
+    <meta property="og:locale" content="it_IT" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={resolvedOgTitle} />
+    <meta name="twitter:description" content={resolvedOgDesc} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Desiree Tropini – Graphic Designer",
+      "description": description,
+      "url": siteUrl,
+      "image": ogImage,
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.8719,
+        "longitude": 12.5674
+      },
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Italia"
+      },
+      "serviceType": ["Brand Identity", "Grafica Social Media", "Materiali Stampati", "Web Design", "Packaging Design"],
+      "sameAs": []
+    })} />
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
