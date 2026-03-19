@@ -37,6 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.01em;
 }
 
+/* === GRADIENT TEXT === */
 .gradient-text {
   background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
   -webkit-background-clip: text;
@@ -44,9 +45,22 @@ h1, h2, h3, h4, h5, h6 {
   background-clip: text;
 }
 
-/* === GRAPHIC DESIGN EFFECTS === */
+.gradient-text-animated {
+  background: linear-gradient(270deg, #ec4899, #be185d, #f472b6, #ec4899);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 6s ease infinite;
+}
 
-/* Animated gradient border on hover */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === ANIMATED GRADIENT BORDER === */
 .gfx-border {
   position: relative;
   overflow: hidden;
@@ -78,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
   to { --angle: 360deg; }
 }
 
-/* Reveal on scroll */
+/* === SCROLL REVEAL === */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -89,12 +103,57 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-/* Magnetic tilt on cards */
+/* === STAGGERED REVEAL FOR CARDS === */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.stagger-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === GLASSMORPHISM HOVER === */
+.glass-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-color: rgba(236, 72, 153, 0.3);
+  transform: translateY(-4px);
+}
+:where(.dark) .glass-hover:hover {
+  background: rgba(31, 41, 55, 0.85);
+}
+
+/* === IMAGE REVEAL EFFECT === */
+.image-reveal {
+  position: relative;
+  overflow: hidden;
+}
+.image-reveal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ec4899, #be185d);
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: 2;
+}
+.image-reveal.revealed::after {
+  transform: scaleX(0);
+}
+
+/* === MAGNETIC TILT CARDS === */
 .tilt-card {
   transition: transform 0.2s ease-out;
 }
 
-/* Floating pen tool SVG in hero */
+/* === HERO FLOATING ELEMENTS === */
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-20px) rotate(3deg); }
@@ -106,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
 .animate-float { animation: float 6s ease-in-out infinite; }
 .animate-float-delay { animation: float-delay 5s ease-in-out infinite 1s; }
 
-/* Color swatch animation */
+/* === COLOR SWATCH ANIMATION === */
 @keyframes swatch-pop {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.15); }
@@ -115,27 +174,141 @@ h1, h2, h3, h4, h5, h6 {
 .animate-swatch-delay { animation: swatch-pop 4s ease-in-out infinite 1.3s; }
 .animate-swatch-delay-2 { animation: swatch-pop 4s ease-in-out infinite 2.6s; }
 
-/* Custom cursor dot (desktop only) */
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: #ec4899;
-  border-radius: 50%;
+/* === PROGRESS BAR === */
+.scroll-progress {
   position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-  transform: translate(-50%, -50%);
-  transition: transform 0.15s ease-out;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ec4899, #be185d);
+  z-index: 100;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
 }
+
+/* === HEADER SHRINK === */
+.header-shrink {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.header-shrink.scrolled {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.header-shrink.scrolled .header-logo {
+  height: 5rem;
+}
+
+/* === COUNTER ANIMATION === */
+.counter-value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* === TIMELINE CONNECTOR === */
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ec4899, #be185d, #ec4899, transparent);
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, opacity 0.4s ease 0.3s;
+}
+.timeline-line.revealed {
+  opacity: 0.3;
+  transform: scaleX(1);
+}
+
+/* === PARALLAX === */
+.parallax-bg {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* === FAQ ACCORDION === */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-content.open {
+  max-height: 500px;
+}
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* === REVIEW CARD STAGGER === */
+.review-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: card-appear 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--stagger) * 0.15s);
+}
+@keyframes card-appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === CUSTOM CURSOR (desktop only, hidden on touch/mobile) === */
+@media (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+.cursor-dot,
 .cursor-ring {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #ec489980;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: transform 0.3s ease-out, border-color 0.3s ease-out;
+  display: none;
+}
+
+@media (pointer: fine) {
+  .cursor-dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #ec4899;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out;
+  }
+  .cursor-ring {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ec489980;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease-out, border-color 0.3s ease-out;
+  }
+}
+
+/* === SERVICE PAGE ALTERNATING SECTIONS === */
+.service-section:nth-child(even) .service-grid {
+  direction: rtl;
+}
+.service-section:nth-child(even) .service-grid > * {
+  direction: ltr;
+}
+
+/* === SUBTLE PULSE ON BADGES === */
+@keyframes subtle-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(236, 72, 153, 0); }
+}
+.pulse-badge {
+  animation: subtle-pulse 3s ease-in-out infinite;
 }

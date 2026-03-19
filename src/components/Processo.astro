@@ -1,69 +1,110 @@
 
-  <!-- Processo Section -->
-  <section class="py-16 md:py-24 bg-gray-900 dark:bg-gray-950 text-white relative overflow-hidden transition-colors duration-300">
-    <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="text-center mb-16 reveal">
-        <span class="text-primary-400 font-semibold text-sm uppercase tracking-wider">Come Lavoro</span>
-        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
-          Il mio <span class="text-primary-400">processo</span> creativo
-        </h2>
-        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
-          Un approccio strutturato per garantire risultati eccellenti
-        </p>
-      </div>
+<!-- Processo Section -->
+<section class="py-16 md:py-24 bg-gray-900 dark:bg-gray-950 text-white relative overflow-hidden transition-colors duration-300">
+  <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="text-center mb-16 reveal">
+      <span class="text-primary-400 font-semibold text-sm uppercase tracking-wider">Come Lavoro</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
+        Il mio <span class="text-primary-400">processo</span> creativo
+      </h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        Un approccio strutturato per garantire risultati eccellenti
+      </p>
+    </div>
+    
+    <!-- Timeline container -->
+    <div class="relative" id="processo-timeline">
+      <!-- Animated connecting line (desktop) -->
+      <div class="timeline-line hidden lg:block" id="timeline-connector"></div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
-        <div class="relative">
-          <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-colors h-full">
-            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-stagger>
+        <div class="stagger-item relative">
+          <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-all duration-300 h-full group hover:bg-gray-800/80">
+            <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold shadow-lg shadow-primary-500/20 group-hover:scale-110 transition-transform">
               01
             </div>
             <h3 class="font-display text-xl font-bold mb-3">Scoperta</h3>
-            <p class="text-gray-400">
+            <p class="text-gray-400 leading-relaxed">
               Analizzo il tuo brand, i tuoi obiettivi e il tuo pubblico target per capire cosa serve davvero.
             </p>
+            <!-- Step connector (mobile/tablet) -->
+            <div class="lg:hidden flex justify-center mt-6">
+              <div class="w-0.5 h-8 bg-gradient-to-b from-primary-500 to-transparent"></div>
+            </div>
           </div>
-          <div class="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary-500 to-transparent"></div>
+          <!-- Desktop connector dot -->
+          <div class="hidden lg:flex absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-primary-500 rounded-full items-center justify-center z-10 shadow-lg shadow-primary-500/30">
+            <div class="w-2 h-2 bg-white rounded-full"></div>
+          </div>
         </div>
         
-        <div class="relative">
-          <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-colors h-full">
-            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">
+        <div class="stagger-item relative">
+          <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-all duration-300 h-full group hover:bg-gray-800/80">
+            <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold shadow-lg shadow-primary-500/20 group-hover:scale-110 transition-transform">
               02
             </div>
             <h3 class="font-display text-xl font-bold mb-3">Strategia</h3>
-            <p class="text-gray-400">
+            <p class="text-gray-400 leading-relaxed">
               Definisco la direzione creativa e preparo moodboard e concept per allinearci sulla visione.
             </p>
+            <div class="lg:hidden flex justify-center mt-6">
+              <div class="w-0.5 h-8 bg-gradient-to-b from-primary-500 to-transparent"></div>
+            </div>
           </div>
-          <div class="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary-500 to-transparent"></div>
+          <div class="hidden lg:flex absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-primary-500 rounded-full items-center justify-center z-10 shadow-lg shadow-primary-500/30">
+            <div class="w-2 h-2 bg-white rounded-full"></div>
+          </div>
         </div>
         
-        <div class="relative">
-          <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-colors h-full">
-            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">
+        <div class="stagger-item relative">
+          <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-all duration-300 h-full group hover:bg-gray-800/80">
+            <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold shadow-lg shadow-primary-500/20 group-hover:scale-110 transition-transform">
               03
             </div>
             <h3 class="font-display text-xl font-bold mb-3">Design</h3>
-            <p class="text-gray-400">
+            <p class="text-gray-400 leading-relaxed">
               Creo le proposte grafiche, le affino con i tuoi feedback fino al risultato perfetto.
             </p>
+            <div class="lg:hidden flex justify-center mt-6">
+              <div class="w-0.5 h-8 bg-gradient-to-b from-primary-500 to-transparent"></div>
+            </div>
           </div>
-          <div class="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary-500 to-transparent"></div>
+          <div class="hidden lg:flex absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-primary-500 rounded-full items-center justify-center z-10 shadow-lg shadow-primary-500/30">
+            <div class="w-2 h-2 bg-white rounded-full"></div>
+          </div>
         </div>
         
-        <div>
-          <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-colors h-full">
-            <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">
+        <div class="stagger-item relative">
+          <div class="bg-gray-800/50 backdrop-blur rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-all duration-300 h-full group hover:bg-gray-800/80">
+            <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 text-xl font-bold shadow-lg shadow-primary-500/20 group-hover:scale-110 transition-transform">
               04
             </div>
             <h3 class="font-display text-xl font-bold mb-3">Consegna</h3>
-            <p class="text-gray-400">
+            <p class="text-gray-400 leading-relaxed">
               Preparo tutti i file nei formati necessari e ti supporto nell'implementazione.
             </p>
+          </div>
+          <div class="hidden lg:flex absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-primary-500 rounded-full items-center justify-center z-10 shadow-lg shadow-primary-500/30">
+            <div class="w-2 h-2 bg-white rounded-full"></div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+  const timelineConnector = document.getElementById('timeline-connector');
+  if (timelineConnector) {
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          timelineConnector.classList.add('revealed');
+          timelineObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    timelineObserver.observe(timelineConnector);
+  }
+</script>

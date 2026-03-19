@@ -1,0 +1,401 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    id: 'brand-identity',
+    title: 'Brand Identity Completa',
+    subtitle: 'Servizio Premium',
+    description: 'Un pacchetto completo per creare l\'identità visiva del tuo brand da zero. Dalla strategia alla realizzazione, ogni elemento viene progettato per comunicare i valori e la personalità unica del tuo business.',
+    longDescription: 'La brand identity è molto più di un semplice logo. È l\'insieme di tutti gli elementi visivi che rendono il tuo brand riconoscibile e memorabile. Lavoro con te per capire la tua visione, il tuo pubblico e i tuoi obiettivi, creando un sistema visivo coerente che funziona su ogni touchpoint.',
+    includes: [
+      'Logo design con varianti (orizzontale, verticale, icona)',
+      'Palette colori primaria e secondaria',
+      'Selezione e abbinamento tipografico',
+      'Pattern e elementi grafici decorativi',
+      'Set di icone personalizzate',
+      'Brand manual completo con linee guida',
+      'File in tutti i formati necessari (AI, PDF, PNG, SVG)',
+      'Mockup di applicazione su materiali reali',
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>`,
+    premium: true,
+  },
+  {
+    id: 'social-media',
+    title: 'Social Media Graphics',
+    subtitle: 'Contenuti Visivi',
+    description: 'Contenuti visivi accattivanti e coerenti per tutte le tue piattaforme social. Ogni post è progettato per catturare l\'attenzione e rafforzare la tua presenza online.',
+    longDescription: 'I social media sono la vetrina del tuo brand. Creo template personalizzati e contenuti grafici che mantengono una coerenza visiva su tutte le piattaforme, aumentando il riconoscimento del brand e l\'engagement.',
+    includes: [
+      'Template personalizzati per post e stories',
+      'Copertine e banner per i profili social',
+      'Grafiche per campagne promozionali',
+      'Caroselli e infografiche',
+      'Adattamento formati per ogni piattaforma',
+      'Kit grafico mensile personalizzabile',
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>`,
+    premium: false,
+  },
+  {
+    id: 'materiali-stampati',
+    title: 'Materiali Stampati',
+    subtitle: 'Print Design',
+    description: 'Biglietti da visita, brochure, flyer, cataloghi e tutto ciò che serve per una comunicazione stampata professionale e d\'impatto.',
+    longDescription: 'Il materiale stampato rimane uno strumento fondamentale per il business. Progetto ogni pezzo con attenzione ai dettagli tipografici, alla qualità di stampa e all\'esperienza tattile, per lasciare un\'impressione duratura.',
+    includes: [
+      'Biglietti da visita premium',
+      'Brochure e depliant',
+      'Flyer e volantini',
+      'Cataloghi prodotto',
+      'Carta intestata e buste',
+      'Cartellonistica e banner',
+      'File pronti per la stampa (CMYK, abbondanze)',
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`,
+    premium: false,
+  },
+  {
+    id: 'web-design',
+    title: 'Web Design',
+    subtitle: 'Design Digitale',
+    description: 'Design di interfacce web moderne, responsive e user-friendly. Creo esperienze digitali che convertono visitatori in clienti.',
+    longDescription: 'Un sito web ben progettato è il biglietto da visita digitale del tuo brand. Progetto interfacce intuitive e visivamente accattivanti, ottimizzate per ogni dispositivo e pensate per guidare l\'utente verso l\'azione.',
+    includes: [
+      'Design UI/UX completo',
+      'Layout responsive (mobile, tablet, desktop)',
+      'Prototipo interattivo navigabile',
+      'Design system con componenti riutilizzabili',
+      'Ottimizzazione per la conversione',
+      'Consegna file Figma organizzati',
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>`,
+    premium: false,
+  },
+  {
+    id: 'packaging',
+    title: 'Packaging Design',
+    subtitle: 'Design Prodotto',
+    description: 'Design di packaging accattivante che fa risaltare i tuoi prodotti sugli scaffali e crea un\'esperienza di unboxing memorabile.',
+    longDescription: 'Il packaging è spesso il primo contatto fisico tra il cliente e il tuo prodotto. Progetto confezioni che comunicano qualità, catturano l\'attenzione e raccontano la storia del tuo brand attraverso materiali, forme e grafiche.',
+    includes: [
+      'Concept e progettazione packaging',
+      'Design etichette prodotto',
+      'Sviluppo fustella personalizzata',
+      'Mockup 3D fotorealistici',
+      'Selezione materiali e finiture',
+      'File pronti per la produzione',
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>`,
+    premium: false,
+  },
+  {
+    id: 'motion-graphics',
+    title: 'Motion Graphics',
+    subtitle: 'Animazione',
+    description: 'Animazioni e video grafici per rendere i tuoi contenuti più dinamici, coinvolgenti e memorabili su ogni piattaforma.',
+    longDescription: 'Il movimento cattura l\'attenzione. Creo animazioni di logo, intro video, grafiche animate per social media e presentazioni che danno vita al tuo brand e rendono i tuoi contenuti impossibili da ignorare.',
+    includes: [
+      'Animazione logo (logo reveal)',
+      'Intro e outro video',
+      'Grafiche animate per social media',
+      'Presentazioni animate',
+      'GIF e micro-animazioni',
+      'Consegna in formati ottimizzati per ogni piattaforma',
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>`,
+    premium: false,
+  },
+];
+
+const faqs = [
+  {
+    question: 'Quanto tempo ci vuole per completare un progetto?',
+    answer: 'I tempi variano in base alla complessità del progetto. Una brand identity completa richiede generalmente 3-4 settimane, mentre progetti più semplici come grafiche social possono essere pronti in pochi giorni. Definiremo insieme una timeline precisa all\'inizio della collaborazione.',
+  },
+  {
+    question: 'Come funziona il processo di revisione?',
+    answer: 'Ogni progetto include un numero definito di revisioni (generalmente 2-3 round). Ad ogni step ti presento le proposte, raccogliamo i tuoi feedback e affino il design fino a raggiungere il risultato perfetto.',
+  },
+  {
+    question: 'Quali formati di file riceverò?',
+    answer: 'Riceverai tutti i file nei formati necessari per il tuo utilizzo: AI, PDF, PNG, SVG, JPG e qualsiasi altro formato specifico di cui hai bisogno. Per i materiali stampati fornisco file CMYK pronti per la stampa.',
+  },
+  {
+    question: 'Lavori solo con aziende o anche con privati?',
+    answer: 'Lavoro con chiunque abbia bisogno di comunicare visivamente: startup, piccole e medie imprese, professionisti, associazioni e privati. Ogni progetto viene trattato con la stessa cura e attenzione.',
+  },
+  {
+    question: 'Posso richiedere un preventivo gratuito?',
+    answer: 'Assolutamente sì! Contattami per raccontarmi il tuo progetto e riceverai un preventivo dettagliato e personalizzato senza alcun impegno. Mi piace capire bene le esigenze prima di proporre una soluzione.',
+  },
+  {
+    question: 'Offri supporto dopo la consegna del progetto?',
+    answer: 'Sì, il mio supporto non finisce con la consegna. Sono disponibile per assistenza nell\'implementazione dei materiali e per eventuali adattamenti futuri. La tua soddisfazione è la mia priorità.',
+  },
+];
+---
+
+<Layout
+  title="Servizi"
+  description="Scopri tutti i servizi di graphic design di Desiree Tropini: brand identity, social media graphics, materiali stampati, web design, packaging e motion graphics. Richiedi un preventivo gratuito."
+  ogTitle="Servizi | Desiree Tropini – Graphic Designer Freelance"
+  ogDescription="Brand identity, social media, web design, packaging e molto altro. Soluzioni grafiche su misura per il tuo brand."
+  keywords="servizi graphic design, brand identity, logo design, social media graphics, web design, packaging design, motion graphics, preventivo grafico, graphic designer freelance Italia"
+>
+  <Header />
+
+  <!-- Page Hero -->
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-primary-50 via-white to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 relative overflow-hidden transition-colors duration-300">
+    <div class="absolute inset-0 opacity-20 dark:opacity-10">
+      <div class="absolute top-20 right-20 w-72 h-72 bg-primary-300 dark:bg-primary-700 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl"></div>
+      <div class="absolute bottom-10 left-10 w-56 h-56 bg-primary-200 dark:bg-primary-800 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center reveal">
+        <span class="text-primary-600 dark:text-primary-400 font-semibold text-sm uppercase tracking-wider">Cosa posso fare per te</span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-7xl font-bold mt-3 mb-6">
+          I miei <span class="gradient-text-animated">servizi</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          Ogni progetto è unico. Offro soluzioni personalizzate per rispondere alle esigenze specifiche del tuo brand, dalla strategia alla realizzazione.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Detail Sections -->
+  {services.map((service, index) => (
+    <section id={service.id} class={`service-section py-16 md:py-24 transition-colors duration-300 ${index % 2 === 0 ? 'bg-white dark:bg-gray-950' : 'bg-gray-50 dark:bg-gray-900'}`}>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class={`service-grid grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center reveal`}>
+          <div class={index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'}>
+            <div class="relative">
+              {service.premium && (
+                <div class="inline-flex items-center gap-2 bg-primary-100 dark:bg-primary-900/50 text-primary-700 dark:text-primary-300 px-4 py-2 rounded-full text-sm font-medium mb-6 pulse-badge">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                  {service.subtitle}
+                </div>
+              )}
+              {!service.premium && (
+                <span class="text-primary-600 dark:text-primary-400 font-semibold text-sm uppercase tracking-wider">{service.subtitle}</span>
+              )}
+              <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6 text-gray-900 dark:text-white">
+                {service.title}
+              </h2>
+              <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                {service.description}
+              </p>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+                {service.longDescription}
+              </p>
+              <a href="/#contatti" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all">
+                Richiedi preventivo
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
+            <div class="bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 lg:p-10 border border-primary-100 dark:border-primary-800 shadow-xl">
+              <h3 class="font-display text-xl font-bold mb-6 text-gray-900 dark:text-white flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center text-white" set:html={service.icon} />
+                Cosa include
+              </h3>
+              <ul class="space-y-4">
+                {service.includes.map((item) => (
+                  <li class="flex items-start gap-3 text-gray-700 dark:text-gray-300">
+                    <svg class="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Custom Project CTA -->
+  <section class="py-16 md:py-24 bg-gradient-to-br from-primary-500 to-primary-700 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative reveal">
+      <div class="w-16 h-16 mx-auto mb-6 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+        Hai un'idea diversa?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+        Non trovi esattamente quello che cerchi? Nessun problema! Contattami per discutere del tuo progetto. Troveremo insieme la soluzione perfetta per le tue esigenze.
+      </p>
+      <a href="/#contatti" class="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 hover:shadow-xl hover:scale-105 transition-all">
+        Parliamone
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 md:py-24 bg-white dark:bg-gray-950 transition-colors duration-300">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="text-primary-600 dark:text-primary-400 font-semibold text-sm uppercase tracking-wider">FAQ</span>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
+          Domande <span class="gradient-text">frequenti</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal" id="faq-container">
+        {faqs.map((faq, i) => (
+          <div class="faq-item bg-gray-50 dark:bg-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all hover:border-primary-200 dark:hover:border-primary-700" data-faq={i}>
+            <button class="faq-trigger w-full text-left px-6 py-5 flex items-center justify-between gap-4" aria-expanded="false">
+              <span class="font-semibold text-gray-900 dark:text-white text-lg">{faq.question}</span>
+              <svg class="faq-icon w-5 h-5 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="faq-content px-6 pb-0">
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed pb-5">{faq.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 md:py-24 bg-gradient-to-b from-white to-primary-50 dark:from-gray-950 dark:to-gray-900 transition-colors duration-300">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+        Pronto a dare vita al tuo <span class="gradient-text">progetto</span>?
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+        Contattami oggi per una consulenza gratuita. Insieme trasformeremo la tua visione in realtà.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/393519586139" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Scrivimi su WhatsApp
+        </a>
+        <a href="/#contatti"
+           class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+          Vai ai contatti
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up { animation: fade-in-up 0.6s ease-out; }
+</style>
+
+<script>
+  // Scroll Reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item')!;
+      const content = item.querySelector('.faq-content') as HTMLElement;
+      const isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        openItem.classList.remove('open');
+        const openContent = openItem.querySelector('.faq-content') as HTMLElement;
+        openContent.style.maxHeight = '0';
+        openContent.style.paddingBottom = '0';
+        openItem.querySelector('.faq-trigger')?.setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Custom Cursor (desktop with fine pointer only)
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const hasFineCursor = window.matchMedia('(pointer: fine)').matches;
+  if (!isTouchDevice && hasFineCursor) {
+    document.body.classList.add('custom-cursor-active');
+    const dot = document.createElement('div');
+    const ring = document.createElement('div');
+    dot.classList.add('cursor-dot');
+    ring.classList.add('cursor-ring');
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.left = mouseX + 'px';
+      dot.style.top = mouseY + 'px';
+    });
+
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.15;
+      ringY += (mouseY - ringY) * 0.15;
+      ring.style.left = ringX + 'px';
+      ring.style.top = ringY + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    document.querySelectorAll('a, button, input, textarea, select, [role="button"]').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        dot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        ring.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        ring.style.borderColor = 'var(--color-primary-400)';
+      });
+      el.addEventListener('mouseleave', () => {
+        dot.style.transform = 'translate(-50%, -50%) scale(1)';
+        ring.style.transform = 'translate(-50%, -50%) scale(1)';
+        ring.style.borderColor = 'var(--color-primary-500)';
+      });
+    });
+  }
+</script>

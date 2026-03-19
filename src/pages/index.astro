@@ -7,6 +7,7 @@ import Portfolio from '../components/Portfolio.astro';
 import Contatti from '../components/Contatti.astro';
 import Chisono from '../components/Chisono.astro';
 import Hero from '../components/Hero.astro';
+import Numeri from '../components/Numeri.astro';
 import Processo from '../components/Processo.astro';
 import Testimonials from '../components/Testimonials.astro';
 ---
@@ -24,15 +25,15 @@ import Testimonials from '../components/Testimonials.astro';
 
   <Chisono />
 
-  <Servizi /> 
+  <Numeri />
 
+  <Servizi /> 
 
   <Portfolio />
 
   <Processo />
 
   <Testimonials />
-
 
   <Contatti />
 
@@ -85,10 +86,53 @@ import Testimonials from '../components/Testimonials.astro';
   }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // Custom Cursor (desktop only — disabled on touch devices)
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  // Staggered reveal for cards
+  const staggerContainers = document.querySelectorAll('[data-stagger]');
+  staggerContainers.forEach(container => {
+    const items = container.querySelectorAll('.stagger-item');
+    const staggerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('revealed');
+            }, index * 150);
+          });
+          staggerObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    staggerObserver.observe(container);
+  });
 
-  if (!isTouchDevice) {
+  // Image reveal on scroll
+  const imageRevealElements = document.querySelectorAll('.image-reveal');
+  const imageRevealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        imageRevealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  imageRevealElements.forEach(el => imageRevealObserver.observe(el));
+
+  // Parallax effect on hero background blobs
+  const parallaxElements = document.querySelectorAll('.parallax-bg');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    parallaxElements.forEach(el => {
+      const speed = parseFloat((el as HTMLElement).dataset.speed || '0.3');
+      (el as HTMLElement).style.transform = `translateY(${scrollY * speed}px)`;
+    });
+  }, { passive: true } as EventListenerOptions);
+
+  // Custom Cursor (desktop with fine pointer only)
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const hasFineCursor = window.matchMedia('(pointer: fine)').matches;
+
+  if (!isTouchDevice && hasFineCursor) {
+    document.body.classList.add('custom-cursor-active');
     const dot = document.createElement('div');
     const ring = document.createElement('div');
     dot.classList.add('cursor-dot');
@@ -115,7 +159,6 @@ import Testimonials from '../components/Testimonials.astro';
     }
     animateRing();
 
-    // Scale effect on hover over interactive elements
     document.querySelectorAll('a, button, input, textarea, select, [role="button"]').forEach(el => {
       el.addEventListener('mouseenter', () => {
         dot.style.transform = 'translate(-50%, -50%) scale(1.5)';
